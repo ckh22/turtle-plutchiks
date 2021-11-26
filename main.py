@@ -55,6 +55,7 @@ main()
 for emotion, setting in settings.items():
     angle = setting['angle']
     color = setting['color']
+    words = setting['words']
     pedal(angle, color, emotion)
 
 
