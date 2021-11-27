@@ -23,9 +23,24 @@ def pedal(angle: int, color: str, emotion: str):
     t.end_fill()
 
     # Sub-divide code
+    # First
+    t.circle(-200, 30)
+    t.rt(90)
+    t.circle(-200, 30)
+    t.rt(90)
+    t.circle(-200, 30)
+    
+    # Second
+    t.rt(90)
+    t.circle(-200, 60)
+    t.rt(60)
+    t.circle(-200, 30)
+    t.rt(60)
+    t.circle(-200, 60)
 
     # Labeling emotion
     t.pu()
+    t.home()
     if emotion == 'Anticipation/Hope':
         t.setpos(-325, 0)
     elif emotion == 'Like':
