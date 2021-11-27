@@ -10,10 +10,10 @@ def main():
 
 
 # This is where we need to add the sub-divides into the pedals
-def pedal(angle: int, color: str, emotion: str):
+def pedal(angle: int, colors, emotion: str):
     # Color
     t.home()
-    t.fillcolor(color)
+    t.fillcolor(colors[2])
     t.begin_fill()
     t.lt(angle + 45)
     t.circle(-200, 90)
@@ -22,21 +22,27 @@ def pedal(angle: int, color: str, emotion: str):
     t.rt(90)
     t.end_fill()
 
+
     # Sub-divide code
+    t.fillcolor(colors[1])
+    t.begin_fill()
+    t.circle(-200, 60)
+    t.rt(60)
+    t.circle(-200, 30)
+    t.rt(60)
+    t.circle(-200, 60)
+    t.end_fill()
+
     # First
-    t.circle(-200, 30)
+    t.fillcolor(colors[0])
+    t.begin_fill()
     t.rt(90)
     t.circle(-200, 30)
     t.rt(90)
     t.circle(-200, 30)
-    
-    # Second
     t.rt(90)
-    t.circle(-200, 60)
-    t.rt(60)
     t.circle(-200, 30)
-    t.rt(60)
-    t.circle(-200, 60)
+    t.end_fill()
 
     # Labeling emotion
     t.pu()
@@ -58,9 +64,9 @@ def pedal(angle: int, color: str, emotion: str):
 # Land the arrow in an uneven spot.
 # Settings includes angle & color for the respective pedal
 settings = {
-    'Joy/Happiness': {'angle': 0, 'color': '#E8EFA2', 'words': []},
-    'Like': {'angle': 90, 'color': '#B1EFA2', 'words': []},
-    'Anticipation/Hope': {'angle': 180, 'color': '#A2EFEF', 'words': []}
+    'Joy/Happiness': {'angle': 0, 'colors': ['#E0EC5F', '#E3EC84', '#E6ECAC'], 'words': []},
+    'Like': {'angle': 90, 'colors': ['#79EC5F', '#9FEB8E', '#BCEDB1'], 'words': []},
+    'Anticipation/Hope': {'angle': 180, 'colors': ['#5FECE9', '#89ECEA', '#B5EBEA'], 'words': []}
 }
 
 
@@ -69,9 +75,9 @@ main()
 # Uses the angles above to create three pedals
 for emotion, setting in settings.items():
     angle = setting['angle']
-    color = setting['color']
+    colors = setting['colors']
     words = setting['words']
-    pedal(angle, color, emotion)
+    pedal(angle, colors, emotion)
 
 
 # End
