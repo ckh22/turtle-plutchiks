@@ -24,6 +24,7 @@ def pedal(angle: int, colors, emotion: str):
 
 
     # Sub-divide code
+    # Larger Sub-division
     t.fillcolor(colors[1])
     t.begin_fill()
     t.circle(-200, 60)
@@ -33,7 +34,7 @@ def pedal(angle: int, colors, emotion: str):
     t.circle(-200, 60)
     t.end_fill()
 
-    # First
+    # Closest Sub-division
     t.fillcolor(colors[0])
     t.begin_fill()
     t.rt(90)
@@ -44,7 +45,8 @@ def pedal(angle: int, colors, emotion: str):
     t.circle(-200, 30)
     t.end_fill()
 
-    # Labeling emotion
+    # Labeling 
+    # Emotion
     t.pu()
     t.home()
     if emotion == 'Anticipation/Hope':
@@ -57,7 +59,8 @@ def pedal(angle: int, colors, emotion: str):
     t.home()
     t.pd()
 
-    # Labeling words
+    # Labeling 
+    # Words
 
 
 # These might need to be edited later if the edits in the above
