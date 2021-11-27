@@ -10,7 +10,7 @@ def main():
 
 
 # This is where we need to add the sub-divides into the pedals
-def pedal(angle: int, colors, emotion: str):
+def pedal(angle: int, colors, emotion: str, words):
     # Color
     t.home()
     t.fillcolor(colors[2])
@@ -65,7 +65,7 @@ def pedal(angle: int, colors, emotion: str):
 
 # These might need to be edited later if the edits in the above
 # Land the arrow in an uneven spot.
-# Settings includes angle & color for the respective pedal
+# Settings includes angle & color for the respective petal
 settings = {
     'Joy/Happiness': {'angle': 0, 'colors': ['#E0EC5F', '#E3EC84', '#E6ECAC'], 'words': []},
     'Like': {'angle': 90, 'colors': ['#79EC5F', '#9FEB8E', '#BCEDB1'], 'words': []},
@@ -80,7 +80,7 @@ for emotion, setting in settings.items():
     angle = setting['angle']
     colors = setting['colors']
     words = setting['words']
-    pedal(angle, colors, emotion)
+    pedal(angle, colors, emotion, words)
 
 
 # End
