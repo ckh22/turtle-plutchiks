@@ -66,23 +66,35 @@ def pedal(angle: int, colors, emotion: str, words):
         t.pu()
         t.home()
         # Edit style within each of the if statements & 
-        # use the i number to change the fontsize
-        style = ("Arial", 8, "normal")
+        # use the i number to change the font size
+        # 16, 12, 8
+        # 16 * 1 = 16
+        # 16 * 0.75 = 12
+        # 16 * 0.5
+        multiplier = 0
+        if i == 0:
+            multiplier = 1
+        elif i == 1:
+            multiplier = 0.85
+        elif i == 2:
+            multiplier = 0.7
+
+        style = ("Arial", int(12 * multiplier), "normal")
         if emotion == 'Anticipation/Hope':
-            t.setpos(-65 + (- 80 * i), -10)
-            t.write(words[i], False, "center", style)
             t.setpos(-65 + (- 80 * i), 10)
-            t.write(words[i + 1], False, "center", style)
+            t.write(words[i * 2], False, "center", style)
+            t.setpos(-65 + (- 80 * i), -10)
+            t.write(words[(i * 2) + 1], False, "center", style)
         elif emotion == 'Like':
             t.setpos(0, 50 + (80 * i))
-            t.write(words[i], False, "center", style)
+            t.write(words[i * 2], False, "center", style)
             t.setpos(0, 70 + (80 * i))
-            t.write(words[i + 1], False, "center", style)
+            t.write(words[(i * 2) + 1], False, "center", style)
         elif emotion == "Joy/Happiness":
-            t.setpos(65 + (80 * i), -10)
-            t.write(words[i], False, "center", style)
             t.setpos(65 + (80 * i), 10)
-            t.write(words[i + 1], False, "center", style)
+            t.write(words[i * 2], False, "center", style)
+            t.setpos(65 + (80 * i), -10)
+            t.write(words[(i * 2) + 1], False, "center", style)
         t.home()
         t.pd()
 
@@ -91,9 +103,9 @@ def pedal(angle: int, colors, emotion: str, words):
 # Land the arrow in an uneven spot.
 # Settings includes angle & color for the respective petal
 settings = {
-    'Joy/Happiness': {'angle': 0, 'colors': ['#E0EC5F', '#E3EC84', '#E6ECAC'], 'words': ['blank', 'blank1', 'blank', 'blank1', 'blank', 'blank1']},
-    'Like': {'angle': 90, 'colors': ['#79EC5F', '#9FEB8E', '#BCEDB1'], 'words': ['blank', 'blank1', 'blank', 'blank1', 'blank', 'blank1']},
-    'Anticipation/Hope': {'angle': 180, 'colors': ['#5FECE9', '#89ECEA', '#B5EBEA'], 'words': ['blank', 'blank1', 'blank', 'blank1', 'blank', 'blank1']}
+    'Joy/Happiness': {'angle': 0, 'colors': ['#E0EC5F', '#E3EC84', '#E6ECAC'], 'words': ['one', 'two', 'three', 'four', 'five', 'six']},
+    'Like': {'angle': 90, 'colors': ['#79EC5F', '#9FEB8E', '#BCEDB1'], 'words': ['one', 'two', 'three', 'four', 'five', 'six']},
+    'Anticipation/Hope': {'angle': 180, 'colors': ['#5FECE9', '#89ECEA', '#B5EBEA'], 'words': ['one', 'two', 'three', 'four', 'five', 'six']}
 }
 
 
@@ -107,4 +119,5 @@ for emotion, setting in settings.items():
 
 
 # End
+s.getcanvas().postscript(file='output.eps')
 turtle.done()
