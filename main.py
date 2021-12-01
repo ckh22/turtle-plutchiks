@@ -9,6 +9,8 @@ def main():
     # initialize
     turtle.title('Plutchiks')
     turtle.setup(1000, 700)
+    t.hideturtle()
+    turtle.hideturtle()
 
 
 # This is where we need to add the sub-divides into the pedals
