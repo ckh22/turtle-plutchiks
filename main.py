@@ -8,12 +8,13 @@ t = turtle.Turtle()
 def main():
     # initialize
     turtle.title('Plutchiks')
-    turtle.setup(800, 700)
+    turtle.setup(1000, 700)
 
 
 # This is where we need to add the sub-divides into the pedals
 def pedal(angle: int, colors, emotion: str, words):
     # Color
+    t.pu()
     t.home()
     t.fillcolor(colors[2])
     t.begin_fill()
@@ -46,31 +47,26 @@ def pedal(angle: int, colors, emotion: str, words):
     t.circle(-200, 30)
     t.end_fill()
 
-    # Labeling
-    # Emotion
+    # Labeling emotion
     t.pu()
     t.home()
+    header_style = ("Arial", 16, "normal")
     if emotion == 'Anticipation/Hope':
         t.setpos(-325, 0)
+        t.write(emotion, False, "right", header_style)
     elif emotion == 'Like':
         t.setpos(0, 300)
+        t.write(emotion, False, "center", header_style)
     elif emotion == "Joy/Happiness":
-        t.setpos(325, 0)
-    t.write(emotion, False, "center")
+        t.setpos(300, 0)
+        t.write(emotion, False, "left", header_style)
     t.home()
     t.pd()
 
-    # Labeling
-    # Words
+    # Labeling words
     for i in range(3):
         t.pu()
         t.home()
-        # Edit style within each of the if statements & 
-        # use the i number to change the font size
-        # 16, 12, 8
-        # 16 * 1 = 16
-        # 16 * 0.75 = 12
-        # 16 * 0.5
         multiplier = 0
         if i == 0:
             multiplier = 1
@@ -99,9 +95,10 @@ def pedal(angle: int, colors, emotion: str, words):
         t.pd()
 
 
-# These might need to be edited later if the edits in the above
-# Land the arrow in an uneven spot.
-# Settings includes angle & color for the respective petal
+# settings includes the emotion as keys with the following data
+#   colors - in order from high to low opacity
+#   words - 6 important words from each category
+#   angle - petal orientation
 settings = {
     'Joy/Happiness': {'angle': 0, 'colors': ['#E0EC5F', '#E3EC84', '#E6ECAC'], 'words': ['love', 'amazing', 'awesome', 'omg', 'cute', 'lol']},
     'Like': {'angle': 90, 'colors': ['#79EC5F', '#9FEB8E', '#BCEDB1'], 'words': ['good', 'great', 'like', 'wow', 'interesting', 'nice']},
@@ -110,7 +107,6 @@ settings = {
 
 
 main()
-# Uses the angles above to create three pedals
 for emotion, setting in settings.items():
     angle = setting['angle']
     colors = setting['colors']
@@ -118,6 +114,4 @@ for emotion, setting in settings.items():
     pedal(angle, colors, emotion, words)
 
 
-# End
-s.getcanvas().postscript(file='output.eps')
 turtle.done()
