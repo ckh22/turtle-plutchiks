@@ -103,9 +103,9 @@ def pedal(angle: int, colors, emotion: str, words):
 # Land the arrow in an uneven spot.
 # Settings includes angle & color for the respective petal
 settings = {
-    'Joy/Happiness': {'angle': 0, 'colors': ['#E0EC5F', '#E3EC84', '#E6ECAC'], 'words': ['one', 'two', 'three', 'four', 'five', 'six']},
-    'Like': {'angle': 90, 'colors': ['#79EC5F', '#9FEB8E', '#BCEDB1'], 'words': ['one', 'two', 'three', 'four', 'five', 'six']},
-    'Anticipation/Hope': {'angle': 180, 'colors': ['#5FECE9', '#89ECEA', '#B5EBEA'], 'words': ['one', 'two', 'three', 'four', 'five', 'six']}
+    'Joy/Happiness': {'angle': 0, 'colors': ['#E0EC5F', '#E3EC84', '#E6ECAC'], 'words': ['love', 'amazing', 'awesome', 'omg', 'cute', 'lol']},
+    'Like': {'angle': 90, 'colors': ['#79EC5F', '#9FEB8E', '#BCEDB1'], 'words': ['good', 'great', 'like', 'wow', 'interesting', 'nice']},
+    'Anticipation/Hope': {'angle': 180, 'colors': ['#5FECE9', '#89ECEA', '#B5EBEA'], 'words': ['update', 'please', 'soon', 'wait', 'next', 'continue']}
 }
 
 
