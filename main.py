@@ -54,13 +54,13 @@ def pedal(angle: int, colors, emotion: str, words):
     t.home()
     header_style = ("Arial", 16, "normal")
     if emotion == 'Anticipation/Hope':
-        t.setpos(-325, 0)
+        t.setpos(-300, -10)
         t.write(emotion, False, "right", header_style)
     elif emotion == 'Like':
         t.setpos(0, 300)
         t.write(emotion, False, "center", header_style)
     elif emotion == "Joy/Happiness":
-        t.setpos(300, 0)
+        t.setpos(300, -10)
         t.write(emotion, False, "left", header_style)
     t.home()
     t.pd()
@@ -79,19 +79,19 @@ def pedal(angle: int, colors, emotion: str, words):
 
         style = ("Arial", int(12 * multiplier), "normal")
         if emotion == 'Anticipation/Hope':
-            t.setpos(-65 + (- 80 * i), 10)
+            t.setpos(-50 + (- 90 * i), 0)
             t.write(words[i * 2], False, "center", style)
-            t.setpos(-65 + (- 80 * i), -10)
+            t.setpos(-50 + (- 90 * i), -15)
             t.write(words[(i * 2) + 1], False, "center", style)
         elif emotion == 'Like':
-            t.setpos(0, 50 + (80 * i))
+            t.setpos(0, 40 + (90 * i))
             t.write(words[i * 2], False, "center", style)
-            t.setpos(0, 70 + (80 * i))
+            t.setpos(0, 60 + (90 * i))
             t.write(words[(i * 2) + 1], False, "center", style)
         elif emotion == "Joy/Happiness":
-            t.setpos(65 + (80 * i), 10)
+            t.setpos(50 + (90 * i), 0)
             t.write(words[i * 2], False, "center", style)
-            t.setpos(65 + (80 * i), -10)
+            t.setpos(50 + (90 * i), -15)
             t.write(words[(i * 2) + 1], False, "center", style)
         t.home()
         t.pd()
