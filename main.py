@@ -11,6 +11,7 @@ def main():
     turtle.setup(1000, 700)
     t.hideturtle()
     turtle.hideturtle()
+    turtle.bgcolor("#FFFEF3")
 
 
 # This is where we need to add the sub-divides into the pedals
@@ -77,11 +78,11 @@ def pedal(angle: int, colors, emotion: str, words):
         elif i == 2:
             multiplier = 0.7
 
-        style = ("Arial", int(12 * multiplier), "normal")
+        style = ("Arial", int(13 * multiplier), "normal")
         if emotion == 'Anticipation/Hope':
-            t.setpos(-50 + (- 90 * i), 0)
+            t.setpos(-55 + (- 90 * i), 2)
             t.write(words[i * 2], False, "center", style)
-            t.setpos(-50 + (- 90 * i), -15)
+            t.setpos(-55 + (- 90 * i), -17)
             t.write(words[(i * 2) + 1], False, "center", style)
         elif emotion == 'Like':
             t.setpos(0, 40 + (90 * i))
@@ -89,9 +90,9 @@ def pedal(angle: int, colors, emotion: str, words):
             t.setpos(0, 60 + (90 * i))
             t.write(words[(i * 2) + 1], False, "center", style)
         elif emotion == "Joy/Happiness":
-            t.setpos(50 + (90 * i), 0)
+            t.setpos(55 + (90 * i), 2)
             t.write(words[i * 2], False, "center", style)
-            t.setpos(50 + (90 * i), -15)
+            t.setpos(55 + (90 * i), -17)
             t.write(words[(i * 2) + 1], False, "center", style)
         t.home()
         t.pd()
@@ -102,9 +103,9 @@ def pedal(angle: int, colors, emotion: str, words):
 #   words - 6 important words from each category
 #   angle - petal orientation
 settings = {
-    'Joy/Happiness': {'angle': 0, 'colors': ['#E0EC5F', '#E3EC84', '#E6ECAC'], 'words': ['love', 'amazing', 'awesome', 'omg', 'cute', 'lol']},
-    'Like': {'angle': 90, 'colors': ['#79EC5F', '#9FEB8E', '#BCEDB1'], 'words': ['good', 'great', 'like', 'wow', 'interesting', 'nice']},
-    'Anticipation/Hope': {'angle': 180, 'colors': ['#5FECE9', '#89ECEA', '#B5EBEA'], 'words': ['update', 'please', 'soon', 'wait', 'next', 'continue']}
+    'Joy/Happiness': {'angle': 0, 'colors': ['#FFFF00', '#FFFF80', '#FFFFA4'], 'words': ['love', 'amazing', 'awesome', 'omg', 'cute', 'lol']},
+    'Like': {'angle': 90, 'colors': ['#00FF33', '#6DFF8A', '#A4FFB6'], 'words': ['good', 'great', 'like', 'wow', 'interesting', 'nice']},
+    'Anticipation/Hope': {'angle': 180, 'colors': ['#00FFDD', '#6DFFEC', '#A4FFF3'], 'words': ['update', 'please', 'soon', 'wait', 'next', 'continue']}
 }
 
 
